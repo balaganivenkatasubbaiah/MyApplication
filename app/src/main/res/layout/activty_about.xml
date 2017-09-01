@@ -1,0 +1,8 @@
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="#ff303030" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.Toolbar android:id="@+id/about_toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="@dimen/abc_action_bar_default_height_material" android:minHeight="@dimen/abc_action_bar_default_height_material" />
+    <ImageView android:id="@+id/about_icon_image" android:layout_width="72.0dip" android:layout_height="72.0dip" android:layout_margin="30.0dip" android:src="@drawable/ic_launcher" />
+    <TextView android:id="@+id/about_app_version" android:text="@string/about_version" style="@style/about_activity_text_style" />
+    <TextView android:text="@string/about_dev" style="@style/about_activity_text_style" />
+    <TextView android:text="@string/about_emoji" style="@style/about_activity_text_style" />
+</LinearLayout>

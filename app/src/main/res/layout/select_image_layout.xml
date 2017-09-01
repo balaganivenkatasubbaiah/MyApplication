@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@+id/collage_main_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <android.support.v7.widget.Toolbar android:id="@+id/my_awesome_toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="@dimen/abc_action_bar_default_height_material" android:minHeight="@dimen/abc_action_bar_default_height_material" />
+        <View android:background="@drawable/dropshadow" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_below="@+id/my_awesome_toolbar" />
+     <!-- <com.lyrebirdstudio.ads.MyViewPager android:id="@+id/native_ad_view_pager" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@+id/my_awesome_toolbar"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <FrameLayout android:id="@+id/insta_show_case_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@+id/collage_image_show_case" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitCenter" android:adjustViewBounds="true" android:layout_below="@+id/my_awesome_toolbar" />
+                <com.google.android.gms.ads.AdView android:layout_gravity="bottom|center" android:id="@+id/collage_main_ad_id" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@+id/collage_image_show_case" ads:adSize="SMART_BANNER" ads:adUnitId="@string/admob_id" xmlns:ads="http://schemas.android.com/apk/res-auto" />
+            </FrameLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/nativeAdContainer" android:background="#ffffffff" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </com.lyrebirdstudio.ads.MyViewPager>-->
+        <LinearLayout android:orientation="vertical" android:background="#fff4f4f4" android:padding="@dimen/collage_main_screen_seperator_width" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@+id/my_awesome_toolbar" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/collage_gallery" android:background="@drawable/selector_collage_pink" android:clickable="true" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:onClick="myClickHandler">
+                    <ImageView android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/grid" />
+                    <TextView android:textSize="@dimen/collage_load_image_layout_text_size" android:textColor="@android:color/white" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/save_image_lib_collage" />
+                </LinearLayout>
+                <View android:layout_width="@dimen/collage_main_screen_seperator_width" android:layout_height="fill_parent" />
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/collage_camera" android:background="@drawable/selector_collage_orange" android:clickable="true" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:onClick="myClickHandler">
+                    <ImageView android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/collage_camera_white" />
+                    <TextView android:textSize="@dimen/collage_load_image_layout_text_size" android:textColor="@android:color/white" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/save_image_lib_camera" />
+                </LinearLayout>
+            </LinearLayout>
+            <View android:layout_width="fill_parent" android:layout_height="@dimen/collage_main_screen_seperator_width" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/collage_scrapbook" android:background="@drawable/selector_collage_green" android:clickable="true" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:onClick="myClickHandler">
+                    <ImageView android:paddingRight="5.0dip" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/collage_scrapbook" />
+                    <TextView android:textSize="@dimen/collage_load_image_layout_text_size" android:textColor="@android:color/white" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/save_image_lib_scrapbook" />
+                </LinearLayout>
+                <View android:layout_width="@dimen/collage_main_screen_seperator_width" android:layout_height="fill_parent" />
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/collage_more_apps" android:background="@drawable/selector_collage_yellow" android:clickable="true" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:onClick="myClickHandler">
+                    <ImageView android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/single_editor" />
+                    <TextView android:textSize="@dimen/collage_load_image_layout_text_size" android:textColor="@android:color/white" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/save_image_lib_single_editor" />
+                </LinearLayout>
+            </LinearLayout>
+            <View android:layout_width="fill_parent" android:layout_height="@dimen/collage_main_screen_seperator_width" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/collage_promo_button" android:background="@drawable/selector_collage_purple" android:clickable="true" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:onClick="myClickHandler">
+                    <ImageSwitcher android:id="@+id/promo_button_image" android:paddingRight="5.0dip" android:clickable="false" android:layout_width="@dimen/promo_button_image_width" android:layout_height="@dimen/promo_button_image_width" android:scaleType="fitCenter" />
+                    <TextView android:textSize="@dimen/collage_load_image_layout_text_size" android:textColor="@android:color/white" android:id="@+id/promo_button_text" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/promo_button_color_effect" />
+                </LinearLayout>
+                <View android:layout_width="@dimen/collage_main_screen_seperator_width" android:layout_height="fill_parent" />
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/collage_rate" android:background="@drawable/selector_collage_blue" android:clickable="true" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:onClick="myClickHandler">
+                    <ImageView android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_rate_review_white_24dp" />
+                    <TextView android:textSize="@dimen/collage_load_image_layout_text_size" android:textColor="@android:color/white" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/save_image_lib_rate" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView android:id="@+id/im_ad_badge_house" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ad_badge_house" />
+    </RelativeLayout>
+    <FrameLayout android:id="@+id/gallery_fragment_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

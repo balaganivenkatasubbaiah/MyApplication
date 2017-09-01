@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="@dimen/font_grid_row_padding" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/font_grid_row_text_size" android:textColor="#ffffffff" android:id="@+id/item_text" android:layout_width="wrap_content" android:layout_height="@dimen/font_grid_row_height" android:layout_marginTop="@dimen/font_grid_row_margin_top" android:text="ABC" android:lines="1" />
+</LinearLayout>

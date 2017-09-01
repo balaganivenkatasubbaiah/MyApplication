@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@+id/inter_splash_layout" android:background="@color/interstitial_splash_screen_bg_color" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" style="@android:style/Widget.ProgressBar.Large.Inverse" />
+        <TextView android:textSize="22.0dip" android:textColor="#ffffffff" android:id="@+id/inter_splash_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/showing_ads" />
+    </LinearLayout>
+</RelativeLayout>

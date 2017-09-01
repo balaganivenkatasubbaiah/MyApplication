@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@+id/layout_gallery_fragment" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="@color/gallery_header_color" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@+id/gallery_header_back_button" android:background="?selectableItemBackgroundBorderless" android:padding="@dimen/gallery_main_layout_header_padding" android:paddingLeft="@dimen/gallery_main_layout_header_arrow_side_padding" android:paddingRight="@dimen/gallery_main_layout_header_arrow_side_padding" android:clickable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/gallery_back_arrow" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="@dimen/gallery_main_layout_header_text_size" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@+id/textView_header" android:padding="@dimen/gallery_main_layout_header_padding" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gallery_select_an_album" />
+    </LinearLayout>
+    <RelativeLayout android:orientation="vertical" android:background="#ffdad6d3" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="4.8">
+        <GridView android:gravity="center" android:id="@+id/gridView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:numColumns="2" />
+        <View android:background="@drawable/dropshadow" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+        <View android:background="@drawable/upshadow" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@+id/gallery_tool_next" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.6">
+        <TextView android:id="@+id/gallery_delete_all" android:text="(0)" android:drawableLeft="@drawable/gallery_ic_delete" style="@style/gallery_tool_text_style" />
+        <TextView android:id="@+id/gallery_max" android:text="@string/gallery_lib_max" android:layout_toRightOf="@+id/gallery_delete_all" style="@style/gallery_tool_text_style" />
+        <TextView android:textColor="#ffffffff" android:id="@+id/gallery_next" android:background="@drawable/selector_gallery_ok_button_bg" android:text="@string/gallery_lib_next" android:drawableRight="@drawable/gallery_ic_right_arrow" android:layout_alignParentRight="true" style="@style/gallery_tool_text_style" />
+        <TextView android:textColor="#ffffffff" android:id="@+id/gallery_remove_all" android:background="#ffff4949" android:visibility="gone" android:text="@string/gallery_lib_remove_all" style="@style/gallery_tool_text_style" />
+    </RelativeLayout>
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@+id/footer" android:background="#ffeeeeee" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.1">
+        <HorizontalScrollView android:layout_gravity="center_vertical" android:scrollbars="none" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="5.0">
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@+id/selected_image_linear" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </HorizontalScrollView>
+        <Button android:textSize="@dimen/gallery_footer_count_button_text_size" android:textStyle="bold" android:textColor="#ffffffff" android:id="@+id/button_footer_count" android:background="@drawable/selector_gallery_ok_button_bg" android:padding="@dimen/gallery_footer_count_button_padding" android:visibility="gone" android:layout_width="@dimen/gallery_footer_count_button_width" android:layout_height="fill_parent" android:text="0" android:drawableBottom="@drawable/ic_done_white" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

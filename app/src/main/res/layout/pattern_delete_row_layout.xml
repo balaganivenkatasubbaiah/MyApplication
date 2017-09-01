@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="0.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@+id/pattern_delete_image_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="0.0dip" android:scaleType="fitCenter" android:adjustViewBounds="true" />
+    <ImageView android:layout_gravity="bottom|center|right" android:id="@+id/pattern_delete_row_button" android:background="@drawable/selector_pattern_delete_bg" android:padding="20.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/pattern_delete_icon" />
+</FrameLayout>

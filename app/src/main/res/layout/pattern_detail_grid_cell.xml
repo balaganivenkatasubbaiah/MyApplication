@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:background="#ffccdddd" android:padding="@dimen/pattern_detail_grid_cell_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="2.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@+id/pattern_detail_grid_image_view" android:layout_width="@dimen/pattern_detail_grid_cell_size" android:layout_height="@dimen/pattern_detail_grid_cell_size" android:scaleType="fitCenter" />
+</LinearLayout>

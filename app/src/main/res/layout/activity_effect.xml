@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/lib_main_activity_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@+id/imageView1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" android:layout_above="@+id/fragment_container" android:layout_below="@+id/apply_filter_header" android:layout_centerHorizontal="true" />
+    <FrameLayout android:id="@+id/fragment_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/apply_filter_header" android:background="@color/lib_header_bg" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="@dimen/lib_toolbar_height" android:layout_alignParentTop="true">
+        <TextView android:gravity="center" android:id="@+id/button_cancel_filter" android:background="@drawable/selector_btn_header" android:clickable="true" android:text="@string/effect_activity_back" style="@style/effect_header_button_style" />
+        <TextView android:gravity="center" android:id="@+id/button_apply_filter" android:background="@drawable/selector_btn_header" android:clickable="true" android:text="@string/effect_activity_done" style="@style/effect_header_button_style" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:background="@color/lib_footer_second_bg" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:onClick="myClickHandler"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@+id/filter_image" android:background="#00000000" android:padding="@dimen/lib_view_item_padding" android:layout_width="@dimen/lib_view_item_image_size" android:layout_height="@dimen/lib_view_item_image_size" android:scaleType="fitXY" android:layout_alignParentTop="true" />
+    <ImageView android:id="@+id/pro_imageview" android:background="#00000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignRight="@+id/filter_image" android:layout_alignParentTop="true" />
+</RelativeLayout>

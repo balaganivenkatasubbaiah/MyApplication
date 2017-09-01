@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#eceecece" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@+id/sticker_fragment_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@+id/text_fragment_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@+id/text_view_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <Button android:id="@+id/text_lib_test_add_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add New Text" android:layout_alignParentBottom="true" android:onClick="myClickHandler" />
+    <Button android:id="@+id/text_lib_add_sticker" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add Sticker" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:onClick="myClickHandler" />
+</RelativeLayout>

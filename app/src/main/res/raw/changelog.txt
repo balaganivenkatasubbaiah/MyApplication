@@ -1,0 +1,169 @@
+<html>
+  <head>
+    <style type='text/css'>
+      a            { color:#a0a0e0 }
+      div.title    { 
+          color:#C0F0C0; 
+          font-size:1.2em; 
+          font-weight:bold; 
+          margin-top:1em; 
+          margin-bottom:0.5em; 
+          text-align:center }
+      div.subtitle { 
+          color:#C0F0C0; 
+          font-size:0.8em; 
+          margin-bottom:1em; 
+          text-align:center }
+      div.freetext { color:#F0F0F0 }
+      div.list     { color:#C0C0F0 }
+    </style>
+  </head>
+  <body>
+$ 2.1.1
+ _ 2017-08-03
+  * Bug fix.
+ _ 2017-07-15
+  * Major update:
+  * Face live camera filters added.
+  _ 2017-05-21
+  * Bug fix.
+  _ 2017-05-03
+  * Google ads policy fix.
+  * GPU overdraw fix.
+  _ 2017-04-27
+  * GPU overdraw fix.
+  _ 2017-03-24
+  * Android 7.0 camera bug fix.
+  _ 2017-01-25
+  * Text Editor bug fix.
+  _ 2016-11-24
+  * Bug fix.
+  * Minor UI changes.
+  _ 2016-11-17
+  * Performance boost.
+  _ 2016-11-08
+  * Bug fix.
+  _ 2016-09-02
+  * New border colors
+  _ 2016-08-17
+  * Border for shapes.
+  * Minor UI changes.
+  _ 2016-07-19
+  * Smart sticker position selector.
+  * New gallery layout.
+  * Crop tool for collage photos.
+  * New animal stickers.
+  * 20 new photo frames.
+  * 46 new special collage layouts.
+  _ 2016-06-02
+  * Collage grids are now adjustable. Make your own collage layouts.
+  * Lots of new animal, flower and tiara stickers.
+  * A new option for background image: Put your own photos as backgrounds.
+  * Blur background option for collages.
+  * Fixed sticker positions.
+  _ 2016-05-06
+  * Major update.
+  * 35 new stickers as rainbow, dog ears, nose tongue etc.
+  * Original size support.
+  * 40 new animal stickers.
+  * 49 new unique effects.
+  * Black strip backgrounded text option.
+  * Text color opacity adjustment option.
+  * Text background color.
+  * Gallery tool improvement.
+  * 60 new patterns for size editor.
+  * App has been added to photo edit menu.
+  * Collage layout lock fix.
+  * Bug fix.
+  _ 2016-04-08
+  * 12 new language supports.
+  _ 2016-03-24
+  * MAJOR UPDATE
+  * Collage photo limit increased to 15.
+  * 550 new emojis.
+  * 60 new patterns.
+  _ 2016-02-22
+  * 360 new emojis.
+  * 60 new collage shapes.
+  _ 2016-02-10
+  * 25 new Collage layouts.
+  * Bug fix.
+  _ 2016-02-02
+  * Cascade mode for blur images.
+  * New text editing layout.
+  * Main screen design change.
+  * 30 new collage layouts.
+  _ 2016-01-07
+  * Happy new year!
+  * Collage layout lock support.
+  * Collage layout size change fix.
+  * Delete All button added for gallery.
+  * Better grid spacing algorithm.
+  * 5 new collage layouts.
+  _ 2015-12-03
+  * New Icon.
+  * Lock support for layout grids.
+  _ 2015-10-17
+  * Bug fix.
+  _ 2015-10-02
+  * Twitter bug fix.
+  _ 2015-09-15
+  * MAJOR UPDATE
+  * Scrapbook mode has been added.
+  * Create freestyle collages with scrapbook mode.
+  * Blur bug fix.
+  _ 2015-08-13
+  * Blur bug fix.
+  _ 2015-07-25
+  * Tens of emojis and smiley stickers.
+  _ 2015-07-06
+  * Several minor bug fix.
+  _ 2015-07-03
+  * Small bug fix.
+  _ 2015-07-02
+  * MAJOR UPDATE
+  * Blur background for single images.
+  * Tilt Shift.
+  * Highlight adjustment.
+  * Shadows adjustment.
+  * Sharpen tool.
+  * Blur tool.
+  * Rotate, flip, zoom, and pan options added.
+  _ 2015-06-05
+  * Bug fix.
+  _ 2015-05-05
+  * Bug fix.
+  _ 2015-04-21
+  * New patterns.
+  * New effects.
+  * New textures and overlays.
+  * Bug fix.
+  _ 2015-03-10
+  * MAJOR UPDATE
+  * Add text and caption to your photos.
+  * 27 new fonts.
+  * Add stickers to your photos.
+  * 301 new stickers.
+  * 30 new collage layouts
+  _ 2015-01-26
+  * Bug fix.
+  * Instagram integration.
+  _ 2015-01-18
+  * 120 new background colors.
+  _ 2015-01-15
+  * Two bug fix.
+  * New square shape for single images.
+  _ 2015-01-13
+  * Minor bug fix.
+  _ 2015-01-08
+  * Grid size controller added. You can find new slider if you tap on the space button.
+  * Bug fix.
+  _ 2015-01-06
+  * Save image bug fix!
+  * Bug fix!
+  _ 2015-01-05
+  * First release!
+
+$ END_OF_CHANGE_LOG
+  </body>
+</html>

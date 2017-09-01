@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:padding="@dimen/sticker_gllery_grid_item_layout_padding" android:layout_width="@dimen/sticker_gllery_grid_item_layout_size" android:layout_height="@dimen/sticker_gllery_grid_item_layout_size"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@+id/imageView" android:layout_width="@dimen/sticker_gllery_grid_item_image_size" android:layout_height="@dimen/sticker_gllery_grid_item_image_size" android:src="@drawable/ic_launcher" android:scaleType="fitCenter" />
+    <ImageView android:textColor="#ffffffff" android:layout_gravity="center" android:id="@+id/image_view_item_selected" android:background="@color/gallery_count_color" android:visibility="visible" android:layout_width="@dimen/sticker_gallery_grid_item_selected_item_size" android:layout_height="@dimen/sticker_gallery_grid_item_selected_item_size" android:src="@drawable/sticker_item_selected" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+</RelativeLayout>

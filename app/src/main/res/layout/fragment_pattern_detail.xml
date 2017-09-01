@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffeeeeef" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/pattern_detail_header" android:background="#ff111111" android:layout_width="fill_parent" android:layout_height="@dimen/abc_action_bar_default_height_material" android:minHeight="@dimen/abc_action_bar_default_height_material">
+        <ImageView android:id="@+id/button_pattern_detail_back" android:background="?selectableItemBackgroundBorderless" android:padding="10.0dip" android:clickable="true" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginLeft="10.0dip" android:src="@drawable/ic_arrow_back" />
+        <TextView android:textSize="21.0sp" android:textColor="#ffffffff" android:id="@+id/text_view_name_pattern_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="21.0dip" android:text="" />
+    </LinearLayout>
+    <ImageView android:id="@+id/image_view_pattern_detail" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitCenter" android:adjustViewBounds="true" android:layout_below="@+id/pattern_detail_header" />
+    <android.support.v7.widget.RecyclerView android:id="@+id/recycler_view_pattern_detail" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@+id/pattern_detail_footer" android:layout_below="@+id/image_view_pattern_detail" />
+    <FrameLayout android:gravity="center" android:layout_gravity="center" android:id="@+id/pattern_detail_footer" android:background="#ffe0e0e0" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <Button android:layout_gravity="center" android:id="@+id/button_pattern_download" android:background="@drawable/pattern_download_icon" android:clickable="true" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+        <FrameLayout android:layout_gravity="center" android:id="@+id/pattern_detail_progress_container" android:paddingLeft="40.0dip" android:paddingRight="40.0dip" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="40.0dip">
+            <ProgressBar android:layout_gravity="center" android:id="@+id/progress_bar_pattern_download" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="12.0dip" android:progress="0" android:progressDrawable="@drawable/greenprogress" android:minHeight="12.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" style="?android:attr/progressBarStyleHorizontal" />
+            <TextView android:textSize="13.0sp" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@+id/text_view_pattern_download" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" android:layout_alignTop="@+id/progress_bar_pattern_download" android:layout_alignBottom="@+id/progress_bar_pattern_download" android:layout_centerHorizontal="true" />
+        </FrameLayout>
+    </FrameLayout>
+    <View android:background="@drawable/dropshadow" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_below="@+id/pattern_detail_header" />
+</RelativeLayout>

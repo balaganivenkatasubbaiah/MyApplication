@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="bottom" android:orientation="vertical" android:id="@+id/text_lib_main_layout" android:background="#cc111111" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@+id/text_lib_toolbar">
+        <com.lyrebirdstudio.canvastext.MyEditText android:textColor="#ffffffff" android:layout_gravity="center" android:id="@+id/text_lib_edittext" android:background="#00000000" android:padding="@dimen/edittext_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:inputType="textMultiLine|textNoSuggestions" android:textCursorDrawable="@null" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@+id/text_lib_toolbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@+id/text_lib_container">
+        <View android:background="@drawable/upshadow" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@+id/text_lib_keyboard" android:background="@color/text_lib_toolbar_button_bg_pressed" android:src="@drawable/ic_text_lib_keyboard" android:text="@string/text_lib_menu_keyboard" style="@style/text_lib_tool_button_style" />
+            <ImageView android:id="@+id/text_lib_font" android:src="@drawable/ic_text_lib_font" android:text="@string/text_lib_menu_font" style="@style/text_lib_tool_button_style" />
+            <ImageView android:id="@+id/text_lib_color" android:src="@drawable/ic_text_lib_palette" android:text="@string/text_lib_menu_color" style="@style/text_lib_tool_button_style" />
+            <ImageView android:id="@+id/text_lib_bg_color" android:src="@drawable/ic_text_bg_color" android:text="@string/text_lib_menu_color" style="@style/text_lib_tool_button_style" />
+            <ImageView android:id="@+id/text_lib_align" android:src="@drawable/ic_text_lib_align_left" android:text="@string/text_lib_menu_align" style="@style/text_lib_tool_button_style" />
+            <ImageView android:id="@+id/text_lib_ok" android:src="@drawable/ic_text_lib_done" android:text="@android:string/ok" style="@style/text_lib_tool_button_style" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@+id/text_lib_container" android:layout_width="fill_parent" android:layout_height="@dimen/canvas_text_layout_height" android:layout_alignParentBottom="true">
+        <GridView android:id="@+id/gridview_font" android:padding="@dimen/grid_padding" android:paddingTop="0.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:numColumns="@integer/grid_num_column" />
+        <LinearLayout android:orientation="vertical" android:id="@+id/gridViewColorContainer" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:padding="14.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="#ffffffff" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/hdr_fx_opacity" style="bold" />
+                <android.support.v7.widget.AppCompatSeekBar android:id="@+id/seekbar_text_color_opacity" android:layout_width="fill_parent" android:layout_height="wrap_content" android:max="255" android:progress="255" />
+            </LinearLayout>
+            <GridView android:gravity="center" android:id="@+id/gridViewColor" android:layout_width="fill_parent" android:layout_height="fill_parent" android:horizontalSpacing="1.0dip" android:verticalSpacing="1.0dip" android:stretchMode="columnWidth" android:columnWidth="@dimen/colorGridColumnWidth" android:numColumns="auto_fit" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@+id/gridViewBackgroundColorContainer" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:padding="14.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="#ffffffff" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/hdr_fx_opacity" style="bold" />
+                <android.support.v7.widget.AppCompatSeekBar android:id="@+id/seekbar_text_background_color_opacity" android:layout_width="fill_parent" android:layout_height="wrap_content" android:max="255" android:progress="255" />
+            </LinearLayout>
+            <GridView android:gravity="center" android:id="@+id/gridViewBackgroundColor" android:layout_width="fill_parent" android:layout_height="fill_parent" android:horizontalSpacing="1.0dip" android:verticalSpacing="1.0dip" android:stretchMode="columnWidth" android:columnWidth="@dimen/colorGridColumnWidth" android:numColumns="auto_fit" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_action_play_store" android:id="@+id/action_pro" android:visible="false" android:orderInCategory="100" android:title="@string/remove_ads" app:showAsAction="always" />
+    <item android:icon="@drawable/nocrop_fb" android:id="@+id/action_face" android:orderInCategory="100" android:title="@string/menu_item_face" app:showAsAction="always" />
+    <item android:icon="@drawable/nocrop_twitter_bird" android:id="@+id/action_twitter" android:orderInCategory="100" android:title="@string/menu_item_twitter" app:showAsAction="always" />
+    <item android:icon="@drawable/nocrop_instagram_follow" android:id="@+id/action_inst" android:orderInCategory="100" android:title="@string/menu_item_inst" app:showAsAction="always" />
+    <item android:icon="@drawable/nocrop_rate_icon" android:id="@+id/action_rate" android:orderInCategory="100" android:title="@string/save_image_lib_select_rate" app:showAsAction="ifRoom" />
+    <item android:id="@+id/action_share" android:orderInCategory="100" android:title="@string/save_image_menu_item_share" app:showAsAction="never" />
+    <item android:id="@+id/action_about" android:orderInCategory="100" android:title="@string/about_title" app:showAsAction="never" />
+</menu>
