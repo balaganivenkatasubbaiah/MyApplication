@@ -123,7 +123,7 @@ public class Shape {
     int viewH;
     int viewW;
 
-    public Shape(PointF[] points, Bitmap b, int[] exceptionIndex, int offsetX, int offsetY, boolean isScrapBook, int index, boolean isDelete, Bitmap del, Bitmap scl, int screenWidth, int shapeModeParam, boolean checkForConcavite, int w, int h) {
+   public Shape(PointF[] points, Bitmap b, int[] exceptionIndex, int offsetX, int offsetY, boolean isScrapBook, int index, boolean isDelete, Bitmap del, Bitmap scl, int screenWidth, int shapeModeParam, boolean checkForConcavite, int w, int h) {
         this.offsetY = 0;
         this.offsetX = 0;
         this.maskBitmap = null;

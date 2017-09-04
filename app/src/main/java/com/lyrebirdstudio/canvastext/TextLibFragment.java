@@ -354,24 +354,24 @@ public class TextLibFragment extends Fragment {
 
     void setVisibiltyMode(int mode) {
         if (mode == this.TOOL_MODE_KEYBOARD) {
-            this.gridViewFont.setVisibility(8);
-            this.gridViewColorContainer.setVisibility(8);
-            this.containerBgColor.setVisibility(8);
+            this.gridViewFont.setVisibility(View.GONE);
+            this.gridViewColorContainer.setVisibility(View.GONE);
+            this.containerBgColor.setVisibility(View.GONE);
             setToolbarButtonBg(this.TOOL_MODE_KEYBOARD);
         } else if (mode == this.TOOL_MODE_FONT) {
-            this.gridViewFont.setVisibility(0);
-            this.gridViewColorContainer.setVisibility(8);
-            this.containerBgColor.setVisibility(8);
+            this.gridViewFont.setVisibility(View.VISIBLE);
+            this.gridViewColorContainer.setVisibility(View.GONE);
+            this.containerBgColor.setVisibility(View.GONE);
             setToolbarButtonBg(this.TOOL_MODE_FONT);
         } else if (mode == this.TOOL_MODE_COLOR) {
-            this.gridViewFont.setVisibility(8);
-            this.gridViewColorContainer.setVisibility(0);
-            this.containerBgColor.setVisibility(8);
+            this.gridViewFont.setVisibility(View.GONE);
+            this.gridViewColorContainer.setVisibility(View.VISIBLE);
+            this.containerBgColor.setVisibility(View.GONE);
             setToolbarButtonBg(this.TOOL_MODE_COLOR);
         } else if (mode == this.TOOL_MODE_BG_COLOR) {
-            this.gridViewFont.setVisibility(8);
-            this.gridViewColorContainer.setVisibility(8);
-            this.containerBgColor.setVisibility(0);
+            this.gridViewFont.setVisibility(View.GONE);
+            this.gridViewColorContainer.setVisibility(View.GONE);
+            this.containerBgColor.setVisibility(View.VISIBLE);
             setToolbarButtonBg(this.TOOL_MODE_BG_COLOR);
         }
     }

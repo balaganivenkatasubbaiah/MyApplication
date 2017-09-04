@@ -3,7 +3,10 @@ package com.lyrebirdstudio.sticker;
 import android.content.Context;
 
 import com.loopj.android.http.FileAsyncHttpResponseHandler;
+import com.lyrebirdstudio.promodialog.LIRestClient;
 
+
+import org.apache.http.Header;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -33,7 +36,7 @@ public class StickerOnlineLib {
         File f = getFilePath(url.substring(url.lastIndexOf(47) + 1, url.length()), context, "", folderName);
         if (f == null || !f.getParentFile().isDirectory()) {
             stickerImageDownloadListener.onStickerImageDownloadFailure();
-        } /*else {
+        } else {
             LIRestClient.downloadFile(url, null, new FileAsyncHttpResponseHandler(f) {
                 @Override
                 public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, Throwable throwable, File file) {
@@ -47,7 +50,7 @@ public class StickerOnlineLib {
 
 
             });
-        }*/
+        }
     }
 
     public static String getFileName(String url) {
@@ -96,7 +99,7 @@ public class StickerOnlineLib {
         File f = getJsonFile(context, url, folderName);
         if (f == null || !f.getParentFile().isDirectory()) {
             stickerJSONDownloadListener.onStickerJSONDownloadFailed();
-        } /*else {
+        } else {
             LIRestClient.downloadFile(url, null, new FileAsyncHttpResponseHandler(f) {
                 @Override
                 public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, Throwable throwable, File file) {
@@ -108,15 +111,9 @@ public class StickerOnlineLib {
                     stickerJSONDownloadListener.onStickerJSONDownloaded(file.getAbsolutePath());
                 }
 
-                public void onSuccess(int arg0, Header[] arg1, File arg2) {
 
-                }
-
-                public void onFailure(int arg0, Header[] arg1, Throwable arg2, File arg3) {
-
-                }
             });
-        }*/
+        }
     }
 
     public static File getJsonFile(Context context, String url, String folderName) {

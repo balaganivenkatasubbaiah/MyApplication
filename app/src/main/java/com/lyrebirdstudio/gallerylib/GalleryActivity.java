@@ -222,7 +222,7 @@ public class GalleryActivity extends Activity implements OnItemClickListener {
             }
             in.putExtra("photo_id_list", arrr);
             in.putExtra("photo_orientation_list", orientationArr);
-            setResult(-1, in);
+            setResult(RESULT_OK, in);
             finish();
         }
     }

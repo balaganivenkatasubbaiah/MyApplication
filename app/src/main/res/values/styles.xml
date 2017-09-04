@@ -119,6 +119,32 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1.0</item>
     </style>
+
+    <style name="MyAppTheme" parent="@style/AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="MyAppTheme.Collage" parent="@style/MyAppTheme">
+        <item name="android:windowBackground">@color/theme_collage_bg</item>
+    </style>
+
+    <style name="ratio_button_style">
+        <item name="android:textSize">@dimen/ratio_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">@dimen/ratio_button_width</item>
+        <item name="android:layout_height">@dimen/ratio_button_height</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="header_button_style">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff919191</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
    <!-- <style name="collage_ratio_button_style">
         <item name="android:textSize">@dimen/collage_ratio_text_size</item>
         <item name="android:textStyle">bold</item>
@@ -211,13 +237,7 @@
         <item name="android:layout_height">fill_parent</item>
         <item name="android:layout_centerVertical">true</item>
     </style>
-    <style name="header_button_style">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#ff919191</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1.0</item>
-    </style>
+
     <style name="ratio_button_style">
         <item name="android:textSize">@dimen/ratio_text_size</item>
         <item name="android:textStyle">bold</item>

@@ -17,7 +17,7 @@
     <item type="dimen" name="abc_dialog_min_width_major">65.0%</item>
     <item type="dimen" name="abc_dialog_min_width_minor">94.99999%</item>
     <dimen name="anim_cam_gal_menu_button_padding">7.0dip</dimen>
-    <dimen name="collage_context_button_style_min_width">60.0dip</dimen>
+    <dimen name="collage_context_button_style_min_width">10.0dp</dimen>
     <dimen name="collage_footer_button_padding">3.0dip</dimen>
     <dimen name="collage_footer_button_text_size">10.0sp</dimen>
     <dimen name="collage_ratio_button_height">70.0dip</dimen>

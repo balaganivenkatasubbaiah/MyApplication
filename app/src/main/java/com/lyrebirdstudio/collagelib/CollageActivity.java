@@ -52,6 +52,7 @@ import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.OnHierarchyChangeListener;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -63,7 +64,8 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
-
+import com.google.android.gms.ads.AdRequest.Builder;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.lyrebirdstudio.R;
 import com.lyrebirdstudio.canvastext.BaseData;
@@ -76,6 +78,8 @@ import com.lyrebirdstudio.canvastext.TextLibHelper;
 import com.lyrebirdstudio.collagelib.MyAdapter.CurrentCollageIndexChangedListener;
 import com.lyrebirdstudio.collagelib.RotationGestureDetector.OnRotationGestureListener;
 import com.lyrebirdstudio.common_libs.CommonLibrary;
+import com.lyrebirdstudio.cropimages.FragmentCrop;
+import com.lyrebirdstudio.cropimages.FragmentCrop.CropListener;
 import com.lyrebirdstudio.gallerylib.GalleryUtility;
 import com.lyrebirdstudio.imagesavelib.SaveImageActivity;
 import com.lyrebirdstudio.linecolorpicker.LineColorPicker;
@@ -91,11 +95,6 @@ import com.lyrebirdstudio.pattern.PatternHelper.PatternBitmapColorListener;
 import com.lyrebirdstudio.sticker.StickerData;
 import com.lyrebirdstudio.sticker.StickerLibHelper;
 import com.lyrebirdstudio.sticker.StickerView;
-import com.lyrebirdstudio.pointlist.Collage;
-import com.lyrebirdstudio.pointlist.CollageLayout;
-import com.lyrebirdstudio.pointlist.MaskPairSvg;
-import com.lyrebirdstudio.svg.Svg;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -103,6 +102,10 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import com.lyrebirdstudio.pointlist.Collage;
+import com.lyrebirdstudio.pointlist.CollageLayout;
+import com.lyrebirdstudio.pointlist.MaskPairSvg;
+import com.lyrebirdstudio.svg.Svg;
 
 public class CollageActivity extends FragmentActivity {
     public static final int INDEX_COLLAGE = 0;
@@ -122,6 +125,7 @@ public class CollageActivity extends FragmentActivity {
     int RATIO_BUTTON_SIZE = 11;
     Activity activity = this;
     FragmentActivity activityFragment = this;
+    AdView adWhirlLayout;
     boolean bgImageIsWaiting = false;
     Bitmap[] bitmapList;
     private int blurRadius = 14;
@@ -136,8 +140,8 @@ public class CollageActivity extends FragmentActivity {
     int colorSelected;
     Context context = this;
     ViewGroup contextFooter;
-   // FragmentCrop cropFragment;
-   /* CropListener cropListener = new CropListener() {
+    FragmentCrop cropFragment;
+    CropListener cropListener = new CropListener() {
         public void cropCancelled() {
             CollageActivity.this.getSupportFragmentManager().beginTransaction().remove(CollageActivity.this.cropFragment).commitAllowingStateLoss();
             CollageActivity.this.setVisibilityOfCollage(0);
@@ -149,7 +153,7 @@ public class CollageActivity extends FragmentActivity {
             CollageActivity.this.getSupportFragmentManager().beginTransaction().remove(CollageActivity.this.cropFragment).commitAllowingStateLoss();
             CollageActivity.this.setVisibilityOfCollage(0);
         }
-    };*/
+    };
     public final int defaultSizeProgressForBlur = 45;
     OnClickListener dialogClickListener = new C06047();
     FullEffectFragment fullEffectFragment;
@@ -388,6 +392,7 @@ public class CollageActivity extends FragmentActivity {
 
         protected Void doInBackground(Bundle... params) {
             int i;
+            Log.e("doInBackground","initial");
             this.data = params[0];
             this.savedInstanceState = params[1];
             CollageActivity.this.isScrapBook = this.data.getBoolean("is_scrap_book", false);
@@ -400,9 +405,8 @@ public class CollageActivity extends FragmentActivity {
                 if (selectedImagePath != null) {
                     this.arraySize = 1;
                     CollageActivity.this.bitmapList = new Bitmap[this.arraySize];
-                  //  String str = selectedImagePath;
-                   // int i4 = Utility.maxSizeForDimension(CollageActivity.this.context, 3, 1500.0F);
-                    CollageActivity.this.bitmapList[0] = Utility.decodeFile(selectedImagePath, Utility.maxSizeForDimension(CollageActivity.this.context, 3, CollageActivity.UPPER_SIZE_FOR_LOAD), CollageActivity.this.isScrapBook);
+                    String str = selectedImagePath;
+                    CollageActivity.this.bitmapList[0] = Utility.decodeFile(str, Utility.maxSizeForDimension(CollageActivity.this.context, 3, CollageActivity.UPPER_SIZE_FOR_LOAD), CollageActivity.this.isScrapBook);
                 }
             } else {
                 this.arraySize = selectedImageList.length;
@@ -447,6 +451,7 @@ public class CollageActivity extends FragmentActivity {
                 this.progressDialog.dismiss();
             } catch (Exception e) {
             }
+            Log.e("onPostExecute","initial");
             if (this.arraySize <= 0) {
                 Toast msg = Toast.makeText(CollageActivity.this.context, R.string.collage_lib_loading_error_message, 1);
                 msg.setGravity(17, msg.getXOffset() / 2, msg.getYOffset() / 2);
@@ -485,7 +490,7 @@ public class CollageActivity extends FragmentActivity {
             if (CollageActivity.this.isScrapBook) {
                 CollageActivity.this.setVisibilityForScrapbook();
             }
-          /*  if (CommonLibrary.isAppPro(CollageActivity.this.context)) {
+        /*    if (CommonLibrary.isAppPro(CollageActivity.this.context)) {
                 CollageActivity.this.adWhirlLayout = (AdView) CollageActivity.this.findViewById(R.id.collage_edit_ad_id);
                 CollageActivity.this.adWhirlLayout.setVisibility(8);
             } else {
@@ -1943,8 +1948,8 @@ public class CollageActivity extends FragmentActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(1);
-        getWindow().addFlags(1024);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //getWindow().addFlags(1024);
         Display display = getWindowManager().getDefaultDisplay();
         this.width = display.getWidth();
         this.height = display.getHeight();
@@ -1974,7 +1979,7 @@ public class CollageActivity extends FragmentActivity {
         this.colorDefault = getResources().getColor(R.color.view_flipper_bg_color);
         this.colorSelected = getResources().getColor(R.color.footer_button_color_pressed);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this.context);
-        layoutManager.setOrientation(0);
+        layoutManager.setOrientation(LinearLayout.HORIZONTAL);
         this.collageRecyclerView.setLayoutManager(layoutManager);
         this.collageAdapter = new MyAdapter(Collage.collageIconArray[arraySize - 1], new C10091(), this.colorDefault, this.colorSelected, false, true);
         this.collageRecyclerView.setAdapter(this.collageAdapter);
@@ -1983,7 +1988,7 @@ public class CollageActivity extends FragmentActivity {
         this.viewFlipper.setDisplayedChild(7);
         RecyclerView recyclerViewPattern = (RecyclerView) findViewById(R.id.recyclerView_pattern);
         LinearLayoutManager layoutManagerPattern = new LinearLayoutManager(this.context);
-        layoutManagerPattern.setOrientation(0);
+        layoutManagerPattern.setOrientation(LinearLayout.HORIZONTAL);
         this.colorContainer = (LinearLayout) findViewById(R.id.color_container);
         recyclerViewPattern.setLayoutManager(layoutManagerPattern);
         patternHelperInit();
@@ -1991,11 +1996,11 @@ public class CollageActivity extends FragmentActivity {
         recyclerViewPattern.setItemAnimator(new DefaultItemAnimator());
         this.recyclerViewInnerPattern = (RecyclerView) findViewById(R.id.recyclerView_color);
         LinearLayoutManager layoutManagerColor = new LinearLayoutManager(this.context);
-        layoutManagerColor.setOrientation(0);
+        layoutManagerColor.setOrientation(LinearLayout.HORIZONTAL);
         this.recyclerViewInnerPattern.setLayoutManager(layoutManagerColor);
         final HorizontalScrollView horizontalScrollView = (HorizontalScrollView) findViewById(R.id.collage_footer_scrollview);
         horizontalScrollView.bringToFront();
-        horizontalScrollView.postDelayed(new Runnable() {
+       /* horizontalScrollView.postDelayed(new Runnable() {
             public void run() {
                 horizontalScrollView.scrollTo(horizontalScrollView.getChildAt(0).getMeasuredWidth(), 0);
             }
@@ -2004,8 +2009,7 @@ public class CollageActivity extends FragmentActivity {
             public void run() {
                 horizontalScrollView.fullScroll(17);
             }
-        }, 1500);
-        CollageActivity collageActivity = this;
+        }, 1500);*/
         new BitmapWorkerTask().execute(new Bundle[]{extras, savedInstanceState});
     }
 
@@ -2069,11 +2073,12 @@ public class CollageActivity extends FragmentActivity {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == SAVE_IMAGE_ID) {
-         /*   if (!CommonLibrary.isAppPro(this.context) && this.context.getResources().getBoolean(R.bool.showInterstitialAds)) {
+      /*  if (requestCode == SAVE_IMAGE_ID) {
+            if (!CommonLibrary.isAppPro(this.context) && this.context.getResources().getBoolean(R.bool.showInterstitialAds)) {
                 AdUtility.displayInterStitialWithSplashScreen(this.interstitial, this, AdUtility.SPLASH_TIME_OUT_DEFAULT, "COLLAGE_ACTIVITY_ONACTIVITYRESULT");
-            }*/
-        } else if (requestCode == PatternHelper.SELCT_IMAGE_BG && resultCode == -1) {
+            }
+        } else */
+        if (requestCode == PatternHelper.SELCT_IMAGE_BG && resultCode == RESULT_OK) {
             if (this.patternHelper == null) {
                 patternHelperInit();
             }
@@ -2135,10 +2140,10 @@ public class CollageActivity extends FragmentActivity {
         if (!(this.collageView == null || this.collageView.blurBuilderNormal == null)) {
             this.collageView.blurBuilderNormal.destroy();
         }
-      /*  if (this.adWhirlLayout != null) {
+        if (this.adWhirlLayout != null) {
             this.adWhirlLayout.removeAllViews();
             this.adWhirlLayout.destroy();
-        }*/
+        }
     }
 
     void setSelectedTab(int index) {
@@ -2370,11 +2375,11 @@ public class CollageActivity extends FragmentActivity {
             }
         } else if (id == R.id.button_collage_context_delete) {
             createDeleteDialog();
-        }/* else if (id == R.id.button_collage_context_crop) {
+        } else if (id == R.id.button_collage_context_crop) {
             if (this.collageView != null && this.collageView.shapeIndex >= 0) {
                 addCropFragment(((ShapeLayout) this.collageView.shapeLayoutList.get(0)).shapeArr[this.collageView.shapeIndex].getBitmap());
             }
-        } */else if (id == R.id.button_collage_context_filter) {
+        } else if (id == R.id.button_collage_context_filter) {
             this.collageView.openFilterFragment();
         } else if (id == R.id.button_save_collage_image) {
             setSelectedTab(7);
@@ -2675,7 +2680,7 @@ public class CollageActivity extends FragmentActivity {
         if (this.textLibHelper == null) {
             this.textLibHelper = new TextLibHelper();
         }
-/*        if (!this.textLibHelper.removeOnBackPressed(this.activityFragment) && !PatternHelper.onBackPressed(this)) {
+        if (!this.textLibHelper.removeOnBackPressed(this.activityFragment) && !PatternHelper.onBackPressed(this)) {
             if (this.cropFragment != null && this.cropFragment.isVisible()) {
                 this.cropFragment.onBackPressed();
                 setVisibilityOfCollage(0);
@@ -2709,7 +2714,7 @@ public class CollageActivity extends FragmentActivity {
                     }
                 }
             }
-        }*/
+        }
     }
 
     private void backButtonAlertBuilder() {
@@ -2760,7 +2765,7 @@ public class CollageActivity extends FragmentActivity {
         return this.f2024m;
     }
 
-   /* void addCropFragment(Bitmap sourceBitmap) {
+    void addCropFragment(Bitmap sourceBitmap) {
         ((FrameLayout) findViewById(R.id.crop_fragment_container)).bringToFront();
         this.cropFragment = (FragmentCrop) getSupportFragmentManager().findFragmentByTag("crop_fragment");
         if (this.cropFragment == null) {
@@ -2774,7 +2779,7 @@ public class CollageActivity extends FragmentActivity {
             this.cropFragment.setBitmap(sourceBitmap);
         }
         setVisibilityOfCollage(4);
-    }*/
+    }
 
     void setVisibilityOfCollage(final int visibility) {
         if (this.mainLayout == null) {

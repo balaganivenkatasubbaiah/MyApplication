@@ -125,17 +125,19 @@ public class Utility {
 
     public static Bitmap decodeFile(String path, int requiredSize, boolean isScrapBook) {
         IOException e;
+        Bitmap bitmap;
         try {
             File f = new File(path);
             Options boundsOption = new Options();
             boundsOption.inJustDecodeBounds = true;
+
             BitmapFactory.decodeStream(new FileInputStream(f), null, boundsOption);
             Options o2 = new Options();
             if (VERSION.SDK_INT >= 11 && isScrapBook) {
                 o2.inMutable = true;
             }
             o2.inSampleSize = calculateInSampleSize(boundsOption, requiredSize, requiredSize);
-            Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(f), null, o2);
+             bitmap = BitmapFactory.decodeStream(new FileInputStream(f), null, o2);
             int orientation = 1;
             try {
                 ExifInterface exif = new ExifInterface(path);
@@ -160,7 +162,7 @@ public class Utility {
         } catch (FileNotFoundException e4) {
             return null;
         }
-        return null;
+        return bitmap;
     }
 
     /* JADX WARNING: inconsistent code. */

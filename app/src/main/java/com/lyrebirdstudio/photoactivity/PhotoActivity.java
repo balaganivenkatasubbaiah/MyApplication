@@ -27,7 +27,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageSwitcher;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -464,6 +463,7 @@ public abstract class PhotoActivity extends AppCompatActivity {
         } else if (requestCode == 110) {
             this.selectImageMode = 106;
             if (resultCode == RESULT_OK) {
+
                 this.selectImageMode = 110;
                 String resultPath = null;
                 if (data != null) {
@@ -501,7 +501,7 @@ public abstract class PhotoActivity extends AppCompatActivity {
             }
         } /*else if (!CommonLibrary.isAppPro(this) && requestCode == 45) {
             AdUtility.displayInterStitialWithSplashScreen(this.interstitial, this.activity, AdUtility.SPLASH_TIME_OUT_DEFAULT, getAdMessage());
-        }*/ else if (requestCode == 117 && resultCode == -1) {
+        }*/ else if (requestCode == 117 && resultCode == RESULT_OK) {
             this.selectImageMode = 117;
             this.imageLoader.getImageFromIntent(data);
         }
@@ -613,7 +613,7 @@ public abstract class PhotoActivity extends AppCompatActivity {
 
     public void openCollage(boolean isblur, boolean isScrapBook, boolean isShape) {
         hideMainLayout();
-        int reqId = 112;
+        int reqId = REQUEST_WRITE_STORAGE_COLLAGE;
         if (isblur && isScrapBook) {
             reqId = REQUEST_WRITE_STORAGE_SCRAPBOOK_BLUR;
         }
@@ -621,7 +621,7 @@ public abstract class PhotoActivity extends AppCompatActivity {
             reqId = REQUEST_WRITE_STORAGE_SCRAPBOOK;
         }
         if (isblur && !isScrapBook) {
-            reqId = 114;
+            reqId = REQUEST_WRITE_STORAGE_BLUR;
         }
         if (VERSION.SDK_INT >= 23) {
             boolean permission = checkPermission(reqId);
@@ -654,8 +654,8 @@ public abstract class PhotoActivity extends AppCompatActivity {
 
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         boolean isScrapBook = true;
-        if (requestCode == 112 || requestCode == 114 || requestCode == REQUEST_WRITE_STORAGE_SCRAPBOOK || requestCode == REQUEST_WRITE_STORAGE_SCRAPBOOK_BLUR) {
-            boolean isBlur = requestCode == 114 || requestCode == REQUEST_WRITE_STORAGE_SCRAPBOOK_BLUR;
+        if (requestCode == REQUEST_WRITE_STORAGE_COLLAGE || requestCode == REQUEST_WRITE_STORAGE_BLUR || requestCode == REQUEST_WRITE_STORAGE_SCRAPBOOK || requestCode == REQUEST_WRITE_STORAGE_SCRAPBOOK_BLUR) {
+            boolean isBlur = requestCode == REQUEST_WRITE_STORAGE_BLUR || requestCode == REQUEST_WRITE_STORAGE_SCRAPBOOK_BLUR;
             if (!(requestCode == REQUEST_WRITE_STORAGE_SCRAPBOOK || requestCode == REQUEST_WRITE_STORAGE_SCRAPBOOK_BLUR)) {
                 isScrapBook = false;
             }
