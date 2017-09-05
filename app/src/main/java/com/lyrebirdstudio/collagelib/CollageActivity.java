@@ -530,6 +530,7 @@ public class CollageActivity extends FragmentActivity {
             CollageActivity.this.findViewById(CollageActivity.this.stickerFragemntContinerId).bringToFront();
             CollageActivity.this.stickerLibHelper = new StickerLibHelper();
             if (this.savedInstanceState != null) {
+
                 CollageActivity.this.textLibHelper.hideForOncreate(CollageActivity.this.activityFragment, CollageActivity.this.textAndStickerViewContainer, CollageActivity.this.textFragemntContinerId);
                 CollageActivity.this.stickerLibHelper.hideForOncreate(CollageActivity.this.activityFragment, CollageActivity.this.textAndStickerViewContainer);
             }
